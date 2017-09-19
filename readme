@@ -1,0 +1,22 @@
+
+一、运行说明
+1、主节点运行 master.py（redis队列在master节点）
+2、docker中运行spider.py 或 由master新建docker并启动spider
+
+二、补充以下模块使此软件更完整
+1.日志记录功能logging
+2.配置文件功能config
+
+三、参数设置
+master_ip主节点ip
+
+四、函数修改
+1、__init_urllist_mock
+初始化url队列（从mysql中取出url放入redis）
+
+2、add_urls(r, urllist)
+当url队列中url不足，向其中补充url
+
+3、new_spiders(r,max=4)
+当spider不足时，启动新的spider
+
